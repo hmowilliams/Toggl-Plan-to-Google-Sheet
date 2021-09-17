@@ -8,3 +8,4 @@ Imports everything available through the Toggl Plan API to a Google Sheet
 
 ## Notes
 - The first time you run the script it will require authorization. 
+- The Combined tab replaces the project and member IDs with the names of the respective projects and members for easier use.
