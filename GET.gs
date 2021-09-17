@@ -1,7 +1,7 @@
 USERNAME = "{the email address you use to sign in to Toggl Plan}";
 PASSWORD = "{the password you use for Toggl Plan}";
 AUTH_TOKEN = "Bearer " + "{token}";
-WORKSPACE = 788132;
+WORKSPACE = "{your Toggl Plan workspace ID}";
 SPREADSHEET_ID = "{the ID of your target spreadsheet}"; // The ID of the template spreadsheet is 19g0nBt3bGQVtuWaTd0b56t4FHwlbzN72HYzIdQ18EU4
 
 function renderJSON() {
@@ -52,7 +52,7 @@ function renderJSON() {
 }
 
 function getTasks() {
-	const url = "https://api.plan.toggl.com/api/v5/788132/tasks/"; // /timeline?filter=active";
+	const url = "https://api.plan.toggl.com/api/v5/" + WORKSPACE + "/tasks/"; // /timeline?filter=active";
 	const response = UrlFetchApp.fetch(url, {
 		"method": "GET",
 		"headers": {
@@ -70,7 +70,7 @@ function getTasks() {
 }
 
 function getProjects() {
-	const url = "https://api.plan.toggl.com/api/v5/788132/projects";
+	const url = "https://api.plan.toggl.com/api/v5/" + WORKSPACE + "/projects";
 	const response = UrlFetchApp.fetch(url, {
 		"method": "GET",
 		"headers": {
@@ -88,7 +88,7 @@ function getProjects() {
 }
 
 function getMembers() {
-	const url = "https://api.plan.toggl.com/api/v5/788132/members";
+	const url = "https://api.plan.toggl.com/api/v5/" + WORKSPACE + "/members";
 	const response = UrlFetchApp.fetch(url, {
 		"method": "GET",
 		"headers": {
@@ -106,7 +106,7 @@ function getMembers() {
 }
 
 function getMilestones() {
-	const url = "https://api.plan.toggl.com/api/v5/788132/milestones";
+	const url = "https://api.plan.toggl.com/api/v5/" + WORKSPACE + "/milestones";
 	const response = UrlFetchApp.fetch(url, {
 		"method": "GET",
 		"headers": {
@@ -124,7 +124,7 @@ function getMilestones() {
 }
 
 function getGroups() {
-	const url = "https://api.plan.toggl.com/api/v5/788132/groups";
+	const url = "https://api.plan.toggl.com/api/v5/" + WORKSPACE + "/groups";
 	const response = UrlFetchApp.fetch(url, {
 		"method": "GET",
 		"headers": {
